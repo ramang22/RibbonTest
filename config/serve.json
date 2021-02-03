@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Lists/testflow/AllItems.aspx",
+      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Procesnamapa/Forms/AllItems.aspx",
       "customActions": {
         "7fe9e8cd-eb01-43f9-b69e-5654e5bb7eb3": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
@@ -16,7 +16,7 @@
       }
     },
     "ribbonTest": {
-      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Lists/testflow/AllItems.aspx",
+      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Procesnamapa/Forms/AllItems.aspx",
       "customActions": {
         "7fe9e8cd-eb01-43f9-b69e-5654e5bb7eb3": {
           "location": "ClientSideExtension.ListViewCommandSet.CommandBar",

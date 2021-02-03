@@ -56,7 +56,8 @@ export default class RibbonTestCommandSet extends BaseListViewCommandSet<IRibbon
         if (event.selectedRows.length > 0) {
           // Check the selected rows
           event.selectedRows.forEach((row: RowAccessor, index: number) => {
-            alert(`Smernica: ${row.getValueByName('N_x00e1_zovSmernice')} - Field title: ${row.getValueByName('Title')}`);
+            console.log(row)
+            alert(`Smernica: ${row.getValueByName("FileLeafRef")} - Field title: ${row.getValueByName('Verzia')}`);
           });
       }
         break;
