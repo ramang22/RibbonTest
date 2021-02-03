@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Lists/testflow/AllItems.aspx",
+      "customActions": {
+        "7fe9e8cd-eb01-43f9-b69e-5654e5bb7eb3": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    },
+    "ribbonTest": {
+      "pageUrl": "https://testsnt.sharepoint.com/sites/TIMS/Lists/testflow/AllItems.aspx",
+      "customActions": {
+        "7fe9e8cd-eb01-43f9-b69e-5654e5bb7eb3": {
+          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+          "properties": {
+            "sampleTextOne": "One item is selected in the list",
+            "sampleTextTwo": "This command is always visible."
+          }
+        }
+      }
+    }
+  }
+}
