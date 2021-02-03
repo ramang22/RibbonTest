@@ -8,6 +8,7 @@ import {
 } from '@microsoft/sp-listview-extensibility';
 import { Dialog } from '@microsoft/sp-dialog';
 
+import {RowAccessor} from '@microsoft/sp-listview-extensibility';
 import * as strings from 'RibbonTestCommandSetStrings';
 
 /**
@@ -33,6 +34,14 @@ export default class RibbonTestCommandSet extends BaseListViewCommandSet<IRibbon
 
   @override
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
+    const commandOne: Command = this.tryGetCommand('COMMAND_1');
+    if (commandOne) {
+      // Single item selection
+      commandOne.visible = event.selectedRows.length > 0;
+    }
+
+
+
     // const compareOneCommand: Command = this.tryGetCommand('COMMAND_1');
     // if (compareOneCommand) {
     //   // This command should be hidden unless exactly one row is selected.
@@ -44,10 +53,12 @@ export default class RibbonTestCommandSet extends BaseListViewCommandSet<IRibbon
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
       case 'COMMAND_1':
-        Dialog.alert(`${this.properties.sampleTextOne}`);
-        break;
-      case 'COMMAND_2':
-        Dialog.alert(`${this.properties.sampleTextTwo}`);
+        if (event.selectedRows.length > 0) {
+          // Check the selected rows
+          event.selectedRows.forEach((row: RowAccessor, index: number) => {
+            alert(`Smernica: ${row.getValueByName('N_x00e1_zovSmernice')} - Field title: ${row.getValueByName('Title')}`);
+          });
+      }
         break;
       default:
         throw new Error('Unknown command');
